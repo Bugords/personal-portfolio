@@ -1,36 +1,38 @@
-(function () {
-  var $ = function (s) { return document.querySelector(s); };
+// Live Quezon City (Asia/Manila) time
+function updateClock() {
+  const clockEl = document.getElementById('clock');
+  if (!clockEl) return;
+  const time = new Intl.DateTimeFormat('en-PH', {
+    timeZone: 'Asia/Manila',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true
+  }).format(new Date());
+  clockEl.textContent = `Quezon City · ${time}`;
+}
+updateClock();
+setInterval(updateClock, 30000);
 
-  $('#year').textContent = new Date().getFullYear();
-
-  function tick() {
-    var t = new Date().toLocaleTimeString('en-PH', { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', hour12: false });
-    $('#clock').textContent = 'Quezon City ' + t + ' PHT';
-  }
-  tick(); setInterval(tick, 30000);
-
-  var links = document.querySelectorAll('nav a');
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      links.forEach(function (a) {
-        a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id);
-        if (a.hasAttribute('aria-current')) a.setAttribute('aria-current', 'true');
-      });
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  document.querySelectorAll('main section').forEach(function (s) { io.observe(s); });
-
-  var email = $('#mail').textContent;
-  $('#copy').addEventListener('click', function () {
-    var done = function (m) { $('#copied').textContent = m; setTimeout(function () { $('#copied').textContent = ''; }, 2500); };
-    if (navigator.clipboard) navigator.clipboard.writeText(email).then(function () { done('Copied'); }, function () { done('Copy failed. Select the email above.'); });
-    else done('Copy failed. Select the email above.');
-  });
-
-  $('#mailform').addEventListener('submit', function (e) {
+// Mailto form handler
+const mailForm = document.getElementById('mailform');
+if (mailForm) {
+  mailForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    var n = $('#name').value, m = $('#msg').value;
-    window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Hello from ' + n) + '&body=' + encodeURIComponent(m);
+    const name = document.getElementById('name').value.trim();
+    const msg = document.getElementById('msg').value.trim();
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(`${msg}\n\n— ${name}`);
+    window.location.href = `mailto:bjorn@example.com?subject=${subject}&body=${body}`;
   });
-})();
+}
+
+// Copy email button
+const copyBtn = document.getElementById('copy');
+const copiedStatus = document.getElementById('copied');
+if (copyBtn) {
+  copyBtn.addEventListener('click', async () => {
+    await navigator.clipboard.writeText('bjorn@example.com');
+    copiedStatus.textContent = 'Copied!';
+    setTimeout(() => (copiedStatus.textContent = ''), 2000);
+  });
+}

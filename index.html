@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bjorn Kurk Cruz | Web Developer</title>
-<meta name="description" content="Portfolio of Bjorn Kurk Cruz, 4th year BSIT student at La Consolacion University  Philippines. Open to work as a web developer.">
+<meta name="description" content="Portfolio of Bjorn Kurk Cruz, 4th year BSIT student at La Consolacion University Philippines. Open to work as a web developer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,23 +25,37 @@
 
 <main>
 <section id="home" class="sec hero">
-  <h1>Bjorn<br>Kurk<br>Cruz</h1>
+  <div class="hero-grid">
+    <h1>Bjorn<br>Kurk<br>Cruz</h1>
+    <div class="hero-terminal">
+      <div class="term-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="term-title">bkc@terminal:~</span>
+      </div>
+      <pre class="term-body"><code>&gt; whoami
+<strong>Bjorn Kurk Cruz</strong>
+&gt; focus: [Paperwork, Design, Code]
+&gt; status: Ready for deployment_</code></pre>
+    </div>
+  </div>
   <dl class="manifest">
-    <div><dt>role</dt><dd>web developer</dd></div>
+    <div><dt>role</dt><dd>UI/UX</dd></div>
     <div><dt>year</dt><dd>4th year BSIT</dd></div>
     <div><dt>school</dt><dd>La Consolacion University Philippines</dd></div>
     <div><dt>local_time</dt><dd id="clock">Quezon City</dd></div>
     <div class="status"><dt>status</dt><dd><span class="sq" aria-hidden="true"></span>open_to_work</dd></div>
   </dl>
-  <p class="lede">I build websites that load fast, read clearly and work on a cheap phone. Graduating soon, looking for my first developer job.</p>
+  <p class="lede">Technology never stops evolving, and neither do I. Every new language, tool, or bug is just another chance to level up</p>
   <p class="actions"><a class="btn" href="#projects">See projects</a> <a class="btn ghost" href="#contact">Get in touch</a></p>
 </section>
 
 <section id="about" class="sec">
   <h2 class="tag">about.md</h2>
   <div class="body">
-    <p>I am a fourth-year Bachelor of Science in Information Technology student at La Consolacion University of the Philippines. I started with school activities in HTML and grew into building complete sites, from layout to the last bug.</p>
-    <p>I like plain, readable code and interfaces that do one job well. My goal is to work as a web developer where I can ship real features and learn from a team.</p>
+    <p>I am a fourth-year Bachelor of Science in Information Technology student at La Consolacion University of the Philippines. I handle everything from detailed paperwork and documentation to crafting the clean visual design of a website.</p>
+    <p>I am passionate about learning new things every day and expanding my skill set. My goal is to work as a web developer where I can contribute to meaningful projects and grow with a team.</p>
     <figure class="photo"><img src="images/profile.jpg" alt="Portrait of Bjorn Kurk Cruz" width="320" height="400" loading="lazy"></figure>
   </div>
 </section>
@@ -54,7 +68,7 @@
       <div><dt>Front end</dt><dd>HTML, CSS, JavaScript, responsive layout, accessibility basics</dd></div>
       <div><dt>Back end and data</dt><dd>PHP, MySQL, REST basics</dd></div>
       <div><dt>Tools</dt><dd>Git, GitHub, VS Code, Figma, Vercel</dd></div>
-      <div><dt>Learning now</dt><dd>React, Node.js</dd></div>
+      <div><dt>Learning now</dt><dd>AI Engineering, React, Node.js</dd></div>
     </dl>
   </div>
 </section>
@@ -62,34 +76,31 @@
 <section id="projects" class="sec">
   <h2 class="tag">projects/</h2>
   <ol class="projects">
-    <!-- TODO: replace titles, text and links with your real projects -->
     <li>
       <span class="idx">01</span>
       <div class="pbody">
-        <h3>Enrollment Helper</h3>
-        <p><b>Problem:</b> Students queue for hours just to check which subjects are open.</p>
-        <p><b>What I built:</b> A searchable subject list with live seat counts and a printable schedule.</p>
-        <p><a href="https://github.com/your-username/enrollment-helper">View source on GitHub</a></p>
-      </div>
-      <p class="stack">HTML, CSS, JavaScript, PHP, MySQL</p>
-    </li>
-    <li>
-      <span class="idx">02</span>
-      <div class="pbody">
-        <h3>Barangay Notice Board</h3>
-        <p><b>Problem:</b> Community announcements live on paper and get lost in group chats.</p>
-        <p><b>What I built:</b> A mobile-first board where officials post notices and residents filter by date.</p>
-        <p><a href="https://github.com/your-username/notice-board">View source on GitHub</a></p>
+        <h3>Diskarte App</h3>
+        <p><b>Problem:</b> Shoppers struggle to track fluctuating prices of basic goods across different local stores.</p>
+        <p><b>What I built:</b> A lightweight price-checker where users browse and compare current costs of daily necessities.</p>
       </div>
       <p class="stack">HTML, CSS, JavaScript, Firebase</p>
     </li>
     <li>
+      <span class="idx">02</span>
+      <div class="pbody">
+        <h3>Web-Based Syllabus System</h3>
+        <p><b>Problem:</b> Creating, formatting, and reviewing course syllabi manually slows down academic departments.</p>
+        <p><b>What I built:</b> A role-based web platform where faculty draft structured syllabi and admins review and approve them.</p>
+        <p><a href="https://github.com/your-username/syllabus-system">View source on GitHub</a></p>
+      </div>
+      <p class="stack">HTML, CSS, JavaScript, PHP, MySQL</p>
+    </li>
+    <li>
       <span class="idx">03</span>
       <div class="pbody">
-        <h3>Sari-Sari Stock Log</h3>
-        <p><b>Problem:</b> Small stores track stock in notebooks and run out of items without warning.</p>
-        <p><b>What I built:</b> An offline-friendly inventory page with low-stock alerts and a daily sales total.</p>
-        <p><a href="https://github.com/your-username/stock-log">View source on GitHub</a></p>
+        <h3>Student Log App</h3>
+        <p><b>Problem:</b> Students juggle class hours, deadlines, and daily tasks across scattered notes.</p>
+        <p><b>What I built:</b> A clean daily planner where students organize class schedules, log activities, and track tasks.</p>
       </div>
       <p class="stack">HTML, CSS, JavaScript, localStorage</p>
     </li>
@@ -108,11 +119,11 @@
       <button class="btn" type="submit">Open in my email app</button>
     </form>
     <p class="direct">
-      Or write directly: <a id="mail" href="mailto:bjorn@example.com">bjorn@example.com</a>
+      Or write directly: <a id="mail" href="mailto:kurkcruz@gmail.com">kurkcruz@gmail.com</a>
       <button class="btn ghost" type="button" id="copy">Copy email</button>
       <span id="copied" role="status"></span>
     </p>
-    <p><a href="https://github.com/your-username">GitHub</a> and <a href="https://www.linkedin.com/in/your-username">LinkedIn</a></p>
+    <p><a href="https://github.com/your-username">GitHub</a> and <a href="https://www.linkedin.com/in/bjorn-kurk-cruz-49266b322/">LinkedIn</a></p>
   </div>
 </section>
 </main>
