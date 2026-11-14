@@ -1,0 +1,84 @@
+:root{--bg:#e9ecef;--ink:#14171a;--accent:#0b3fd8;--muted:#55606b;
+--rule:color-mix(in srgb,var(--ink) 20%,transparent)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+font-size:17px;line-height:1.7}
+h1,h3,.idx{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+a{color:var(--accent);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:3px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px;background:var(--ink);color:var(--bg);padding:.5rem 1rem}
+.skip:focus{left:1rem;top:1rem;z-index:20}
+
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;
+gap:1rem;padding:.9rem 2rem;background:var(--bg);border-bottom:1px solid var(--rule);font-size:15px}
+.mark{font-weight:500;color:var(--ink);text-decoration:none}
+nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;padding:.1rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+.sec{display:grid;grid-template-columns:7rem minmax(0,70ch) 1fr;column-gap:2rem;
+padding:8rem 2rem;border-bottom:1px solid var(--rule)}
+.tag{grid-column:1;margin:.35rem 0 0;font-size:15px;font-weight:400;color:var(--muted)}
+.body,.projects{grid-column:2 / 4}
+.body{max-width:70ch}
+p{margin:0 0 1.2rem;max-width:70ch}
+
+h1{grid-column:1 / -1;margin:0 0 3rem;font-weight:800;line-height:.88;letter-spacing:-.04em;
+font-size:clamp(5.4rem,16vw,15rem)}
+.hero>*:not(h1){grid-column:2}
+.manifest{margin:0 0 2.5rem;border-top:2px solid var(--ink)}
+.manifest div{display:grid;grid-template-columns:9ch 1fr;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--rule)}
+.manifest dt{color:var(--muted)}
+.manifest dd{margin:0}
+.status dd{font-weight:500}
+.sq{display:inline-block;width:.7em;height:.7em;background:var(--accent);margin-right:.6em}
+.lede{font-size:1.2rem}
+.actions{display:flex;gap:1rem;flex-wrap:wrap}
+
+.btn{font:inherit;font-weight:500;display:inline-block;padding:.7rem 1.2rem;border:2px solid var(--accent);
+background:var(--accent);color:var(--bg);text-decoration:none;border-radius:4px;cursor:pointer}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+
+.photo{margin:2rem 0 0;width:min(100%,320px);aspect-ratio:4/5;border:1px solid var(--ink);background:var(--rule);border-radius:4px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+.skills div{padding:1rem 0;border-top:1px solid var(--rule)}
+.skills dt{font-weight:500}
+.skills dd{margin:0;color:var(--muted)}
+
+.projects{list-style:none;margin:0;padding:0}
+.projects li{display:grid;grid-template-columns:7rem minmax(0,70ch) 1fr;gap:2rem;padding:2.5rem 0;border-top:2px solid var(--ink)}
+.projects li:last-child{border-bottom:2px solid var(--ink)}
+.idx{font-size:clamp(3rem,6vw,5rem);font-weight:800;line-height:1;color:var(--accent)}
+.pbody{grid-column:2}
+h3{margin:0 0 1rem;font-size:2rem;line-height:1.1;letter-spacing:-.02em}
+.stack{grid-column:3;color:var(--muted);font-size:15px;margin:0}
+.projects li{grid-template-columns:5rem minmax(0,70ch) 1fr}
+
+.big{font-size:1.5rem;line-height:1.4}
+form{display:grid;gap:.5rem;margin:2rem 0}
+label{font-weight:500}
+input,textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--ink);border-radius:4px;padding:.6rem .8rem;width:100%}
+form .btn{justify-self:start;margin-top:.8rem}
+.direct{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+#copied{color:var(--muted)}
+footer{padding:3rem 2rem;color:var(--muted);font-size:15px}
+footer p{margin:0}
+
+@media (max-width:760px){
+.top{padding:.8rem 1.25rem;font-size:14px}
+nav{gap:.9rem}
+.sec{display:block;padding:5rem 1.25rem}
+.tag{margin-bottom:1.5rem}
+h1{margin-bottom:2rem;font-size:5.4rem}
+.projects{margin-left:0}
+.projects li{grid-template-columns:1fr;gap:.5rem}
+.pbody,.stack{grid-column:1}
+footer{padding:2rem 1.25rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
